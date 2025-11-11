@@ -1,0 +1,19 @@
+# Ignorar archivos sensibles
+.env
+.env.*
+!*.example
+
+# Cosas de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+.env/
+.env.local/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
