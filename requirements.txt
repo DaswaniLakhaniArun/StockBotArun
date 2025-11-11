@@ -4,3 +4,4 @@ pandas
 numpy
 schedule
 python-dotenv
+Flask==3.0.0
