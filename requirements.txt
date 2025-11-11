@@ -1,0 +1,6 @@
+pyTelegramBotAPI
+yfinance
+pandas
+numpy
+schedule
+python-dotenv
