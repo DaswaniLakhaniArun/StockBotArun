@@ -34,29 +34,29 @@ def check_alerts(data_dict):
         is_crypto = "Bitcoin" in name
         umbral_normal = UMBRAL_NORMAL_CRYPTO if is_crypto else UMBRAL_NORMAL
         umbral_extremo = UMBRAL_EXTREMO_CRYPTO if is_crypto else UMBRAL_EXTREMO
-
+        
         previous_state = state.get(name, "neutral")
-
+        
         # --- Condiciones de alerta ---
         if variacion >= umbral_extremo and previous_state != "up_extreme":
             alerts.append(f"🚀 *{name}* sube un {variacion:.2f}% hoy (nivel EXTREMO).")
             state[name] = "up_extreme"
-
-        elif variacion >= umbral_normal and previous_state not in ["up", "up_extreme"]:
+        
+        elif umbral_normal <= variacion < umbral_extremo and previous_state != "up":
             alerts.append(f"📈 *{name}* sube un {variacion:.2f}% hoy.")
             state[name] = "up"
-
+        
         elif variacion <= -umbral_extremo and previous_state != "down_extreme":
             alerts.append(f"💥 *{name}* cae un {variacion:.2f}% hoy (nivel EXTREMO).")
             state[name] = "down_extreme"
-
-        elif variacion <= -umbral_normal and previous_state not in ["down", "down_extreme"]:
+        
+        elif -umbral_extremo < variacion <= -umbral_normal and previous_state != "down":
             alerts.append(f"📉 *{name}* cae un {variacion:.2f}% hoy.")
             state[name] = "down"
-
+        
         # --- Reset del estado cuando vuelve a la normalidad ---
         elif -umbral_normal < variacion < umbral_normal and previous_state != "neutral":
             state[name] = "neutral"
-
-    save_state(state)
-    return alerts
+        
+        save_state(state)
+        return alerts
