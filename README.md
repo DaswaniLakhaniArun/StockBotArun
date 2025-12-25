@@ -82,13 +82,14 @@ python bot.py
 ```
 
 The following environment variables must be defined:
-	•	TELEGRAM_TOKEN
-	•	USER_CHAT_ID
+- TELEGRAM_TOKEN
+- USER_CHAT_ID
 
 ## Example Output
 
 ### Market open notifications
 
+```
 Europe (LSE & XETRA) markets have opened.
 Opening prices (24/12/2025 08:00)
 
@@ -97,11 +98,11 @@ NASDAQ: +0.57%
 MSCI World: +0.49%
 Gold: +0.23%
 Bitcoin: -0.52%
-
+```
 ### Alert notifications
-
+```
 NASDAQ rises 2.59% today (EXTREME MOVE)
-
+```
 ## Deployment Notes
 
 The bot is deployed on Render using a free web service.
