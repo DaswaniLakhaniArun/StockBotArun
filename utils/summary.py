@@ -1,16 +1,6 @@
 from datetime import datetime
 
 def build_summary(summary: dict, title: str = "Resumen de mercados"):
-    """
-    Construye un mensaje bonito para Telegram con los precios y variaciones.
-    
-    Args:
-        summary (dict): Diccionario con los datos de los activos.
-        title (str): Título del mensaje.
-    
-    Returns:
-        str: Mensaje listo para enviar a Telegram.
-    """
     now = datetime.now().strftime("%d/%m/%Y %H:%M")
     message = f"📊 *{title}* ({now})\n\n"
 
