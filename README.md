@@ -36,6 +36,7 @@ This project was built as a personal initiative to practice:
 
 ## Project Structure
 
+```text
 telegram-finance-bot/
 │
 ├── bot.py              # Main application loop
@@ -43,9 +44,10 @@ telegram-finance-bot/
 ├── requirements.txt
 ├── README.md
 └── utils/
-├── data.py         # Market data retrieval
-├── alerts.py       # Threshold-based alert logic with state memory
-└── summary.py      # Telegram message formatting
+    ├── data.py         # Market data retrieval
+    ├── alerts.py       # Threshold-based alert logic with state memory
+    └── summary.py      # Telegram message formatting
+```
 
 ---
 
